@@ -1,0 +1,81 @@
+¿Qué es una aplicación web?
+Aplicación que los usuarios pueden utilizar accediendo a un servidor web a través de internet mediante un navegador
+> Programa desarrollado es arquitectura cliente-servidor 
+
+¿Qué es una aplicación web ambiciosa?
+Aplicaciones que parecen y actúan como aplicaciones de escritorio pero se utilizan por medio de tecnologías web
+No son documentos, son stateful, long-lived, tienen arquitectura
+
+Definición de Ember
+Es un framework para crear aplicaciones web ambiciosas
+> Stateful, convention over configuration, two-way data binding, abstrae el backend (data layer, capa intermedia) ORM
+
+¿Qué es un framework?
+Es un conjunto (librería) de conceptos, prácticas y criterios que le dan estructura a una aplicación web
+> Estructura conceptual conformada por herramientas o módulos -> software
+
+¿Qué es una aplicación stateful?
+Una aplicación stateful guarda la data en el almacenamiento del disco persistente para usarla por el servidor, el cliente y otras aplicacionesa
+
+MVC
+Modelo Vista Controlador
+Modelo -> data, vista -> lo que ve el usuario, controlador -> cómo interactuar
+
+Ember 2.0 - actual
+2.0 -> MVC, frustrante
+Actual -> DDAU, mantener estado, mantiene estructura de MVC pero no cómo opera
+Estructura de Ember
+
+Ruta
+Nodo en la aplicación (de una página), definida por path específico
+Características (ruta)
+Render template, redirecciona a ruta nueva, acciones para cambiar modelo y cambiar ruta, define estado inicial de aplicación
+> ember g route wa
+
+Application.js
+Ruta padre, disponible para demás rutas, primera en render
+
+Controller
+Archivo personalizado, enlace entre modelo y vista, contiene lógica de la aplicación, primer contacto, decora modelos, responde a interacción de eventos
+> ember g controller wa
+
+Diferencia ruta / controller
+controller -> expandir otras rutas
+ruta -> solo ella
+
+Template
+Archivos de código para hacer la vista, rápido crearlo
+Estructura previa, repetitivo, carga componentes, muestra propiedades de su contexto (una ruta entró a un path, controller), acceder al modelo
+
+Application.hbs -> template de ruta padre
+{{outlet}} -> renderiza template, "aquí caben mis hijos"
+
+Modelo
+Objetos que representan data, abstracción de un objeto de la vida real -> tabla de BD, define atributos y relaciones
+> ember g model wa
+
+
+
+Web Application?
+Client-server computer program hosted in a web server
+
+Conceptual structure defined by tools
+framework
+
+Ember 
+a framework for ambitious web applications
+
+caracteristicas
+stateful, 2-way data binding, convention over configuration
+
+Logica, decorates models, respondea interaciones
+my-app/app/controllers/lab.js
+
+Define atributos, relaciones y comportamiento de la data
+my-app/app/models/lab.js
+
+Despliega templates carga data y el state
+my-app/app/routes/login.js
+
+carga componetntes, despliega propiedades de su contexto accesa al model data
+my-app/app/templates/lab.hbs
